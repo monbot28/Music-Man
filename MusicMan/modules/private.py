@@ -39,22 +39,22 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""┗┓ Haii {message.from_user.first_name} ┏┛\n
-Saya Bot Music Group, Yang dapat Memutar Lagu di Voice Chat Group Dengan Cara Yang Mudah
+        f"""<b>┗┓ Haii {message.from_user.first_name} ┏┛\n
+Saya Bot Music Group, Yang dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah
 
 Saya Memiliki Banyak Fitur Praktis Seperti :
-┏━━━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━━
 ┣• Memutar Musik.
 ┣• Mendownload Lagu.
 ┣• Mencari Lagu Yang DiInginkan.
-┣• Daftar Perintah Lengkap • /help •
-┗━━━━━━━━━━━━━━━
+┣• Daftar Perintah Lengkap » /help «
+┗━━━━━━━━━━━━━━
 
-❃ Created by : [Owner](https://t.me/{OWNER})
-❃ Thanks To  : [Risman](https://t.me/mrismanaziz) 
-━━━━━━━━━━━━━━━━
-Tambahkan Saya Ke Grub Anda !!
-""",
+❃ Owner bot : [Mon](https://t.me/mondisini)
+❃ Thanks To : [Risman](https://t.me/mrismanaziz)
+━━━━━━━━━━━━━━━
+Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
+</b>""",
 
 # Edit Yang Perlu Lu ganti 
 # Tapi Jangan di Hapus Thanks To nya Yaaa :D
@@ -71,7 +71,7 @@ Tambahkan Saya Ke Grub Anda !!
                         "✨ ɢʀᴏᴜᴘs", url=f"https://t.me/{SUPPORT_GROUP}")
                 ],[
                     InlineKeyboardButton(
-                        "⚡ ᴏᴡɴᴇʀ", url=f"https://{OWNER}")
+                        "⚡ ᴏᴡɴᴇʀ", url=f"https://t.me/mondisini")
                 ]
             ]
         ),
@@ -105,7 +105,7 @@ def help_answer(client, callback_query):
 def map(pos):
     if (pos==1):
         return [
-            [InlineKeyboardButton(text = 'ɴᴇxᴛ', callback_data = "help+2")]
+            [InlineKeyboardButton(text = 'Next »', callback_data = "help+2")]
         ]
     elif pos==len(tr.HELP_MSG)-1:
         url = f"https://t.me/{SUPPORT_GROUP}"
@@ -127,17 +127,17 @@ def map(pos):
             ],
             [
                 InlineKeyboardButton(
-                    text='⚡ ᴏᴡɴᴇʀ', url=f"https://{OWNER}"
+                    text='⚡ ᴏᴡɴᴇʀ', url=f"https://t.me/mondisini"
                 )
             ],
-            [InlineKeyboardButton(text='ʙᴀᴄᴋ', callback_data=f"help+{pos-1}")],
+            [InlineKeyboardButton(text='«', callback_data=f"help+{pos-1}")],
         ]
 
     else:
         return [
             [
-                InlineKeyboardButton(text = 'ʙᴀᴄᴋ', callback_data = f"help+{pos-1}"),
-                InlineKeyboardButton(text = 'ɴᴇxᴛ', callback_data = f"help+{pos+1}")
+                InlineKeyboardButton(text = '«', callback_data = f"help+{pos-1}"),
+                InlineKeyboardButton(text = '»', callback_data = f"help+{pos+1}")
             ],
         ]
 
@@ -149,13 +149,17 @@ def map(pos):
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ **Bot sudah dalam posisi aktif!!**",
+        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
         reply_markup=InlineKeyboardMarkup(
             [   
-               [
+                [    
                     InlineKeyboardButton(
-                        "🌹 sᴜᴘᴘᴏʀᴛ", url=f"https://chmongabut")
-               ]
+                        "✅ Ya", switch_inline_query_current_chat=""
+                    ),
+                    InlineKeyboardButton(
+                        "❌ Tidak ", callback_data="close"
+                    )
+                ]
             ]
         )
     )
