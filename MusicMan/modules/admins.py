@@ -46,15 +46,15 @@ async def update_admin(client, message: Message):
         ),
     )
 
-    await message.reply_text("✅ Bot **berhasil dimulai ulang!**\n\n• **Daftar admin** telah **diperbarui**",
+    await message.reply_text("👶 Bot berhasil dimulai ulang!\n\n• Daftar admin telah diperbarui",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/SharingUserbot"
+                        "🌹 sᴜᴘᴘᴏʀᴛ", url="https://t.me/chmongabut"
                     ),
                     InlineKeyboardButton(
-                        "Owner", url="https://t.me/mrismanaziz"
+                        "⚡ ᴏᴡɴᴇʀ", url="https://t.me/mondisini"
                     )
                 ]
             ]
@@ -70,7 +70,7 @@ async def pause(_, message: Message):
     if (chat_id not in callsmusic.active_chats) or (
         callsmusic.active_chats[chat_id] == "paused"
     ):
-        await message.reply_text("❗ **Tidak ada Lagu yang sedang diputar!**")
+        await message.reply_text("**♬ Tidak ada Lagu yang sedang diputar!**")
     else:
         callsmusic.pause(chat_id)
         await message.reply_text("▶️ **Paused!**")
@@ -84,7 +84,7 @@ async def resume(_, message: Message):
     if (chat_id not in callsmusic.active_chats) or (
         callsmusic.active_chats[chat_id] == "playing"
     ):
-        await message.reply_text("❗ **Tidak ada Lagu yang sedang dijeda!**")
+        await message.reply_text("**♬ Tidak ada Lagu yang sedang dijeda!**")
     else:
         callsmusic.resume(chat_id)
         await message.reply_text("⏸ **Resumed!**")
@@ -96,7 +96,7 @@ async def resume(_, message: Message):
 async def stop(_, message: Message):
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.active_chats:
-        await message.reply_text("❗ **Tidak ada Lagu yang sedang diputar!**")
+        await message.reply_text("**♬ Tidak ada Lagu yang sedang diputar!**")
     else:
         try:
             queues.clear(chat_id)
@@ -104,7 +104,7 @@ async def stop(_, message: Message):
             pass
 
         await callsmusic.stop(chat_id)
-        await message.reply_text("❌ **Memberhentikan Lagu!**")
+        await message.reply_text("**♬ Memberhentikan Lagu!**")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -114,7 +114,7 @@ async def skip(_, message: Message):
     global que
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.active_chats:
-        await message.reply_text("❗ **Tidak ada Lagu Selanjutnya untuk dilewati!**")
+        await message.reply_text("**♬ Tidak ada Lagu Selanjutnya untuk dilewati!**")
     else:
         queues.task_done(chat_id)
         if queues.is_empty(chat_id):
@@ -146,4 +146,4 @@ async def admincache(client, message: Message):
         ),
     )
 
-    await message.reply_text("✅️ **Daftar admin** telah **diperbarui**")
+    await message.reply_text("⚡ Daftar admin telah diperbarui ⚡")
