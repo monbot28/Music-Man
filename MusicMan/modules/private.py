@@ -39,7 +39,7 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>┗┓ Haii {message.from_user.first_name} ┏┛\n
+        f"""┗┓ Haii {message.from_user.first_name} ┏┛\n
 Saya Bot Music Group, Yang dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah
 
 Saya Memiliki Banyak Fitur Praktis Seperti :
@@ -54,7 +54,7 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
 ❃ Thanks To : [Risman](https://t.me/mrismanaziz)
 ━━━━━━━━━━━━━━━
 Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
-</b>""",
+""",
 
 # Edit Yang Perlu Lu ganti 
 # Tapi Jangan di Hapus Thanks To nya Yaaa :D
@@ -154,11 +154,8 @@ async def start(client: Client, message: Message):
             [   
                 [    
                     InlineKeyboardButton(
-                        "✅ Ya", switch_inline_query_current_chat=""
+                        "⚡ ᴏᴡɴᴇʀ", url=f"https://t.me/mondisini"
                     ),
-                    InlineKeyboardButton(
-                        "❌ Tidak ", callback_data="close"
-                    )
                 ]
             ]
         )
