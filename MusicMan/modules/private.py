@@ -44,14 +44,14 @@ Saya Bot Music Group, Yang dapat Memutar Lagu di Voice Chat Group Dengan cara ya
 
 Saya Memiliki Banyak Fitur Praktis Seperti :
 ┏━━━━━━━━━━━━━━
-┣• Memutar Musik.
-┣• Mendownload Lagu.
-┣• Mencari Lagu Yang DiInginkan.
+┣• Memutar Musik
+┣• Mendownload Lagu
+┣• Mencari Lagu Yang DiInginkan
 ┣• Daftar Perintah Lengkap » /help «
 ┗━━━━━━━━━━━━━━
 
-❃ Owner bot : [Mon](https://t.me/mondisini)
-❃ Thanks To : [Risman](https://t.me/mrismanaziz)
+☻ Owner bot : [Mon](https://t.me/mondisini)
+☻ Thanks To : [Risman](https://t.me/mrismanaziz)
 ━━━━━━━━━━━━━━━
 Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
 """,
@@ -149,7 +149,7 @@ def map(pos):
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
+        "💮 **Bot music sedang aktif..!!**",
         reply_markup=InlineKeyboardMarkup(
             [   
                 [    
